@@ -1,5 +1,5 @@
 # Fire-Emblem-Engage-Coloring
-A C# program that takes Fire Emblem Engage red scale sprites and palettes to color sprites. Made by [Eclogia](https://www.reddit.com/user/eclogia).
+A C# .NET 6.0 program that takes Fire Emblem Engage red scale sprites and palettes to color sprites. Made by [Eclogia](https://www.reddit.com/user/eclogia) with Visual Studio 2022.
 
 # Usage
 Provide the following folders' path as command-line arguments in order: raw (red scale) sprites, palettes, output
