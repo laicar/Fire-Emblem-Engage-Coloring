@@ -9,3 +9,6 @@ Either the palette I received are extracted wrong, or there is an extra step I d
 
 # How it works
 A Fire Emblem Engage palette file consists of a 512x1 px-sized image with each color on the image (taking 2 pixels) corresponding to a value of red channel in the "raw" sprite image in order. The leftmost color corresponds to a value of 0, while the rightmost one corresponds to 255.
+
+# Dependencies
+Uses [SkiaSharp](https://github.com/mono/SkiaSharp), which is has an MIT licence.
