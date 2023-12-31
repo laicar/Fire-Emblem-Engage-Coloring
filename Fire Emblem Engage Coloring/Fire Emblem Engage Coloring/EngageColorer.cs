@@ -50,7 +50,6 @@ namespace Fire_Emblem_Engage_Coloring
             {
                 Console.WriteLine("Creating directory {0}.", spriteOutputFolderPath);
                 Directory.CreateDirectory(spriteOutputFolderPath);
-                return;
             }
             string[] paletteFilePaths;
             paletteFilePaths = Directory.GetFiles(paletteFolderPath);
