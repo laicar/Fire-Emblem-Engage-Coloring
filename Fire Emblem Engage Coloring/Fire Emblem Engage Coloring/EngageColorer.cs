@@ -34,7 +34,7 @@ namespace Fire_Emblem_Engage_Coloring
 
         //Go through the given folders and match palette files with "raw" sprite files.
         //Call EngageColorer.RecolorSprite() then output the result in a file of the same name as "raw" sprite, but in specified output folder.
-        public static void ProcessFolders(string rawSpriteFolderPath, string paletteFolderPath, string spriteOutputFolderPath)
+        public static void ProcessFolders(string rawSpriteFolderPath, string paletteFolderPath, string spriteOutputFolderPath, bool verbose)
         {
             if (!Directory.Exists(paletteFolderPath))
             {
@@ -62,9 +62,12 @@ namespace Fire_Emblem_Engage_Coloring
                 foreach (string rawSpritePath in unitRawSpriteFilePaths)
                 {
                     SKBitmap coloredSprite = EngageColorer.RecolorSprite(unitPalette, rawSpritePath);
-                    string outputPath = spriteOutputFolderPath + Path.DirectorySeparatorChar + Path.GetFileName(rawSpritePath);
+                    string rawFileName = Path.GetFileName(rawSpritePath);
+                    string outputPath = spriteOutputFolderPath + Path.DirectorySeparatorChar + rawFileName;
                     SKFileWStream fs = new(outputPath);
                     coloredSprite.Encode(fs, SKEncodedImageFormat.Png, quality: 100);
+                    if (verbose)
+                        Console.WriteLine("Output {0}.", rawFileName);
                 }
             }
         }
